@@ -1,0 +1,77 @@
+from currency_converter import CurrencyConverter 
+
+import  sys
+
+def mean():
+    
+    c = CurrencyConverter()
+    def menu():
+        global coin
+        coin = input("[A]-EURO To USD\n[B]-EURO To GBP\n[C]-EURO To CAD\n[D]-EURO To JPY\n[E]-EURO To (USD-GBP-CAD-JPY)\n[X]-EXIT\n[#]-Choose One: ").upper()
+    menu()
+    
+    
+    if coin == "X":
+        print("Thank you for using my App")
+        sys.exit()
+    
+    if coin == "A":
+        def Euro():
+            print("You Choose Convert From Euro-To-USD")
+            euro1 = int(input("Enter Euro Number: "))
+            conver = c.convert(euro1, 'EUR', 'USD')
+            
+            euro2 = int(input("Enter USD Number: "))
+            print(f"{euro1} EURO = {conver:.2f} USD")
+            
+            conver = c.convert(euro2, 'USD', 'EUR')
+            print(f"{euro2} USD = {conver:.2f} EURO")
+        Euro()
+
+    if coin == "B":
+        def Gbp():
+            print("You Choose Convert From Euro-To-GBP")
+            euro1 = float(input("Enter Euro Number: "))
+            conver = c.convert(euro1, 'EUR', 'GBP')
+            euro2 = float(input("Enter GBP Number: "))
+            print(f"{euro1} EURO = {conver:.2f} GBP")
+            conver = c.convert(euro2, 'GBP', 'EUR')
+            print(f"{euro2} GBP = {conver:.2f} EURO")
+        Gbp()
+        
+    if coin == "C":
+        def Dzd():
+            print("You Choose Convert From Euro-To-CAD")
+            euro1 = float(input("Enter Euro Number: "))
+            conver = c.convert(euro1, 'EUR', 'CAD')
+            euro2 = float(input("Enter CAD Number: "))
+            print(f"{euro1} EURO = {conver:.2f} CAD")
+            conver = c.convert(euro2, 'CAD', 'EUR')
+            print(f"{euro2} CAD = {conver:.2f} EURO")
+        Dzd()
+        
+    if coin == "D":
+       def JPY():
+            print("You Choose Convert From Euro-To-JPY")
+            euro1 = float(input("Enter Euro Number: "))
+            conver = c.convert(euro1, 'EUR', 'JPY')
+            euro2 = float(input("Enter JPY Number: "))
+            print(f"{euro1} EURO = {conver:.2f} JPY")
+            conver = c.convert(euro2, 'JPY', 'EUR')
+            print(f"{euro2} JPY = {conver:.2f} EURO")
+       JPY()
+        
+    if coin == "E":
+        def glob():
+            print("You Choose Convert From Euro-To-All")
+            euro = float(input("Enter Euro Number: "))
+            conver1 = c.convert(euro, 'EUR', 'USD')
+            conver2 = c.convert(euro, 'EUR', 'GBP')
+            conver3 = c.convert(euro, 'EUR', 'CAD')
+            conver4 = c.convert(euro, 'EUR', 'JPY')
+            print(f"{euro} EURO = {conver1:.2f} DOLLAR AMERICAN\n{euro} EURO = {conver2:.2f} GREAT BRITISH POUND\n{euro} EURO ={conver3} CANADIAN DOLLAR\n{euro} EURO ={conver4} YEN JAPANESE")
+        glob()
+    back = input("Back Main Menu: ")
+    if back == back:
+                return  menu()
+mean()
